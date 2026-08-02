@@ -58,6 +58,12 @@ Recent work has attempted to generalize time-series modeling through large-scale
 
 These works are important because they signal a shift from task-specific models toward more general sequence learners. However, they remain broad forecasting frameworks rather than adaptive financial decision-support architectures with explicit regime reasoning.
 
+### 2.2.6 Base Paper Positioning
+
+The base literature for the present study is anchored in two complementary directions. First, Vaswani et al. (2017) established the foundational transformer formulation that brought self-attention to the forefront of sequence modeling. Second, Fischer and Krauss (2018) demonstrated that deep sequence models can deliver meaningful gains over classical approaches in financial prediction tasks. These two contributions jointly motivate the present thesis design: a transformer-based architecture for temporal representation learning, combined with explicit regime awareness for financial decision support.
+
+The present study therefore extends the base transformer paradigm beyond generic sequence forecasting by embedding regime interpretability, regime-aware decision conditioning, and a reproducible evaluation workflow tailored to financial environments.
+
 ## 2.3 Representative Comparison Table
 
 | No. | Author(s) | Year | Method | Dataset | Advantages | Limitations | Research Gap |

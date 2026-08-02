@@ -15,9 +15,9 @@ The learning objective is to identify latent market regimes and generate regime-
 The proposed model is called a Regime-Aware Temporal Transformer (RATT). The design uses two parallel information flows.
 
 - A temporal feature branch extracts rolling statistics, volatility signals, trend measures, and cross-feature interactions.
-- A transformer attention branch learns contextual dependencies between time steps and variables.
+- A transformer attention branch learns contextual dependencies between time steps and variables following the self-attention foundation introduced by Vaswani et al. (2017).
 
-The outputs of both branches are fused and then sent to a regime classifier. The classifier assigns a market state such as bullish, bearish, volatile, or neutral. The predicted regime is then used to produce a regime-conditioned decision signal.
+The outputs of both branches are fused and then sent to a regime classifier. The classifier assigns a market state such as bullish, bearish, volatile, or neutral. The predicted regime is then used to produce a regime-conditioned decision signal. This design is motivated by the broader observation from Fischer and Krauss (2018) that sequential deep models can capture financial dependence patterns more effectively than simpler static baselines.
 
 ## 4.3 Architecture
 
