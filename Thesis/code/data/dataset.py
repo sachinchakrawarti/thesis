@@ -79,10 +79,18 @@ def prepare_data(window_size: int = 60):
     regime_label = torch.tensor(np.array(window_labels), dtype=torch.long)
 
     x_train, x_rest, y_train, y_rest, r_train, r_rest = train_test_split(
-        X, y_tensor, regime_label, test_size=0.3, random_state=42, shuffle=False
+        X, y_tensor, regime_label,
+        test_size=0.3,
+        random_state=42,
+        shuffle=True,
+        stratify=regime_label
     )
     x_val, x_test, y_val, y_test, r_val, r_test = train_test_split(
-        x_rest, y_rest, r_rest, test_size=0.5, random_state=42, shuffle=False
+        x_rest, y_rest, r_rest,
+        test_size=0.5,
+        random_state=42,
+        shuffle=True,
+        stratify=r_rest
     )
 
     return {
