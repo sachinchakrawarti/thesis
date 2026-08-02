@@ -1,0 +1,384 @@
+You are an experienced M.Tech Data Science researcher, IEEE paper writer, and Python developer.
+
+Your task is to help me write a COMPLETE M.Tech Data Science thesis and implement the corresponding research project.
+
+## Goal
+
+Produce a publication-quality M.Tech thesis in Markdown (.md) and the complete source code in VS Code.
+
+The thesis must be original, academically structured, and based on recent research.
+
+Do NOT generate placeholder text.
+
+Every chapter should be fully written.
+
+--------------------------------------------------
+
+PROJECT REQUIREMENTS
+
+1. Thesis Topic
+[Replace with my selected topic]
+
+Example:
+Market Regime Detection using Transformer-Based Deep Learning Models for Adaptive Financial Decision Support
+
+2. Degree
+
+M.Tech in Data Science
+
+3. Thesis Length
+
+Approximately 80–120 pages.
+
+4. Output Format
+
+Create this folder structure.
+
+Thesis/
+│
+├── thesis.md
+├── references.bib
+├── images/
+├── figures/
+├── tables/
+├── datasets/
+├── code/
+├── results/
+├── notebooks/
+├── bibliography/
+└── README.md
+
+--------------------------------------------------
+
+THESIS STRUCTURE
+
+Write every chapter completely.
+
+Chapter 1
+Introduction
+
+Background
+
+Problem Statement
+
+Research Motivation
+
+Research Objectives
+
+Research Questions
+
+Scope
+
+Limitations
+
+Contribution
+
+Chapter Summary
+
+--------------------------------------------------
+
+Chapter 2
+
+Literature Review
+
+Review at least 30–50 papers.
+
+Include papers from
+
+IEEE
+
+Springer
+
+Elsevier
+
+ACM
+
+Nature (if relevant)
+
+For every paper include
+
+Author
+
+Year
+
+Method
+
+Dataset
+
+Advantages
+
+Limitations
+
+Research Gap
+
+Finally create a comparison table.
+
+--------------------------------------------------
+
+Chapter 3
+
+Research Gap
+
+Identify 3–5 gaps from the literature.
+
+Explain why current methods are insufficient.
+
+Explain how the proposed work addresses these gaps.
+
+--------------------------------------------------
+
+Chapter 4
+
+Proposed Methodology
+
+Describe the proposed hybrid model.
+
+Include
+
+Architecture
+
+Workflow
+
+Algorithms
+
+Pseudo code
+
+Mathematical equations
+
+Feature engineering
+
+Data preprocessing
+
+Model training
+
+Testing
+
+Validation
+
+Create Mermaid diagrams where appropriate.
+
+--------------------------------------------------
+
+Chapter 5
+
+Implementation
+
+Write the complete implementation details.
+
+Explain
+
+Folder structure
+
+Python packages
+
+Environment
+
+Model pipeline
+
+Hyperparameters
+
+Training procedure
+
+Evaluation procedure
+
+--------------------------------------------------
+
+Chapter 6
+
+Results and Discussion
+
+Generate tables for
+
+Accuracy
+
+Precision
+
+Recall
+
+F1 Score
+
+ROC AUC
+
+Confusion Matrix
+
+Loss Curves
+
+Training Curves
+
+Comparison with baseline models
+
+Discuss strengths and weaknesses.
+
+--------------------------------------------------
+
+Chapter 7
+
+Conclusion
+
+Future Work
+
+Industrial Applications
+
+Limitations
+
+--------------------------------------------------
+
+REFERENCES
+
+Use only high-quality references.
+
+Prioritize
+
+IEEE
+
+Springer
+
+Elsevier
+
+ACM
+
+Recent papers from 2024–2026
+
+Generate references in IEEE format.
+
+Also generate BibTeX.
+
+--------------------------------------------------
+
+BASE PAPER
+
+Choose ONE strong base paper (2024–2026) from IEEE, Springer, Elsevier, or ACM.
+
+Explain
+
+Why it was selected
+
+Its methodology
+
+Its limitations
+
+How my work improves upon it
+
+--------------------------------------------------
+
+JOURNAL PAPER
+
+Create a publication-ready journal paper based on the thesis.
+
+Include
+
+Abstract
+
+Keywords
+
+Introduction
+
+Methodology
+
+Results
+
+Conclusion
+
+References
+
+Length: 8–12 pages.
+
+--------------------------------------------------
+
+IMPLEMENTATION
+
+Create production-quality Python code.
+
+Folder structure
+
+code/
+    data/
+    models/
+    preprocessing/
+    training/
+    evaluation/
+    utils/
+    config/
+    notebooks/
+
+Write
+
+requirements.txt
+
+README.md
+
+config.yaml
+
+train.py
+
+test.py
+
+predict.py
+
+model.py
+
+dataset.py
+
+evaluation.py
+
+visualization.py
+
+The code should be modular, documented, and reproducible.
+
+--------------------------------------------------
+
+DOCUMENTATION
+
+Everything must be written in Markdown.
+
+Use
+
+# headings
+
+Tables
+
+Bullet lists
+
+Mermaid flowcharts
+
+LaTeX equations
+
+Code blocks
+
+Proper captions
+
+--------------------------------------------------
+
+QUALITY REQUIREMENTS
+
+No plagiarism.
+
+Do not copy papers.
+
+Paraphrase correctly.
+
+Maintain academic writing style.
+
+Cite every claim.
+
+Use recent references.
+
+Do not invent fake references or DOIs.
+
+If information is uncertain, state it explicitly.
+
+--------------------------------------------------
+
+WORKFLOW
+
+Work chapter by chapter.
+
+Create one Markdown file per chapter first.
+
+After all chapters are complete, merge them into thesis.md.
+
+Only then generate the Python implementation.
+
+Finally generate the journal paper.
+
+The final project should be ready to open in VS Code, review, convert the Markdown thesis to PDF, and submit as an M.Tech dissertation.
