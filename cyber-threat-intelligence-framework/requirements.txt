@@ -1,0 +1,184 @@
+# ============================================================================
+# Cyber Threat Intelligence Framework - Requirements
+# Python Version: 3.10+
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Core Dependencies
+# ----------------------------------------------------------------------------
+numpy==1.24.3
+pandas==2.0.1
+scipy==1.10.1
+python-dateutil==2.8.2
+pytz==2023.3
+six==1.16.0
+
+# ----------------------------------------------------------------------------
+# Machine Learning Libraries
+# ----------------------------------------------------------------------------
+scikit-learn==1.2.2
+xgboost==1.7.5
+lightgbm==3.3.5          # Optional: Additional boosting model
+catboost==1.2.5          # Optional: Additional boosting model
+
+# ----------------------------------------------------------------------------
+# Deep Learning Libraries
+# ----------------------------------------------------------------------------
+tensorflow==2.12.0
+tensorflow-gpu==2.12.0   # Optional: For GPU support
+keras==2.12.0
+keras-tuner==1.3.5       # For hyperparameter tuning
+
+# ----------------------------------------------------------------------------
+# Natural Language Processing (NLP)
+# ----------------------------------------------------------------------------
+spacy==3.5.1
+nltk==3.8.1
+gensim==4.3.0
+textblob==0.17.1
+transformers==4.38.2     # For BERT, RoBERTa (future extensions)
+tokenizers==0.15.0       # For transformer tokenizers
+
+# ----------------------------------------------------------------------------
+# Web Scraping & Data Collection
+# ----------------------------------------------------------------------------
+requests==2.31.0
+beautifulsoup4==4.12.2
+selenium==4.15.2
+lxml==4.9.3
+html5lib==1.1
+scrapy==2.11.0           # Optional: For advanced web crawling
+urllib3==2.0.7
+
+# ----------------------------------------------------------------------------
+# APIs & Web Framework
+# ----------------------------------------------------------------------------
+fastapi==0.95.2
+uvicorn==0.21.1
+pydantic==1.10.9
+python-multipart==0.0.6
+python-jose==3.3.0       # For JWT authentication
+passlib==1.7.4           # For password hashing
+bcrypt==4.0.1            # For password hashing
+
+# ----------------------------------------------------------------------------
+# Dashboard & Visualization
+# ----------------------------------------------------------------------------
+streamlit==1.24.1
+plotly==5.14.1
+matplotlib==3.7.1
+seaborn==0.12.2
+altair==5.0.1
+bokeh==3.2.2             # Optional: Alternative visualization
+wordcloud==1.9.2         # For word cloud generation
+
+# ----------------------------------------------------------------------------
+# Topic Modeling & Feature Extraction
+# ----------------------------------------------------------------------------
+topic-modeling-toolkit==0.1.0   # Optional: Additional topic modeling
+pyLDAvis==3.4.1                # For LDA visualization
+scikit-bio==0.5.9              # For advanced statistical analysis
+
+# ----------------------------------------------------------------------------
+# Utilities & Helpers
+# ----------------------------------------------------------------------------
+python-dotenv==1.0.0
+pyyaml==6.0
+tqdm==4.65.0
+joblib==1.2.0
+pickle5==0.0.12         # For Python 3.7+ pickle compatibility
+click==8.1.3            # For CLI interfaces
+colorama==0.4.6         # For colored terminal output
+wrapt==1.15.0           # For decorators
+
+# ----------------------------------------------------------------------------
+# Testing & Quality Assurance
+# ----------------------------------------------------------------------------
+pytest==7.3.1
+pytest-cov==4.0.0
+pytest-xdist==3.2.1     # For parallel test execution
+pytest-mock==3.10.0     # For mocking in tests
+pytest-timeout==2.1.0   # For test timeout
+coverage==7.2.3
+flake8==6.0.0
+black==23.1.0
+isort==5.12.0
+pylint==2.17.2
+mypy==1.1.1             # For static type checking
+
+# ----------------------------------------------------------------------------
+# Logging & Monitoring
+# ----------------------------------------------------------------------------
+loguru==0.7.1           # For advanced logging
+python-json-logger==2.0.7  # For structured logging
+prometheus-client==0.17.0  # For metrics collection
+
+# ----------------------------------------------------------------------------
+# Database & Storage
+# ----------------------------------------------------------------------------
+sqlalchemy==2.0.15
+alembic==1.11.0         # For database migrations
+psycopg2-binary==2.9.6   # For PostgreSQL
+pymongo==4.4.1          # For MongoDB
+redis==4.5.5            # For caching
+
+# ----------------------------------------------------------------------------
+# Distributed Processing
+# ----------------------------------------------------------------------------
+celery==5.3.0           # For task queue management
+redis==4.5.5            # For Celery broker
+kafka-python==2.0.2     # For Apache Kafka integration
+
+# ----------------------------------------------------------------------------
+# Deployment & Containerization
+# ----------------------------------------------------------------------------
+docker==6.0.1
+docker-compose==1.29.2  # For Docker Compose
+kubernetes==26.1.0      # For Kubernetes deployment
+gunicorn==20.1.0        # For production WSGI server
+
+# ----------------------------------------------------------------------------
+# Security & Cryptography
+# ----------------------------------------------------------------------------
+cryptography==39.0.2
+pyOpenSSL==23.1.1
+requests-oauthlib==1.3.1
+
+# ----------------------------------------------------------------------------
+# Research & Academic Tools
+# ----------------------------------------------------------------------------
+jupyter==1.0.0
+jupyterlab==3.6.1
+notebook==6.5.4
+ipython==8.12.0
+papermill==2.4.0        # For parameterized notebooks
+nbconvert==7.4.0        # For notebook conversion
+openpyxl==3.1.2         # For Excel file handling
+xlrd==2.0.1             # For Excel reading
+
+# ----------------------------------------------------------------------------
+# Machine Learning Extensions
+# ----------------------------------------------------------------------------
+imbalanced-learn==0.10.1  # For handling imbalanced datasets
+hdbscan==0.8.33           # For clustering
+umap-learn==0.5.3        # For dimensionality reduction
+tslearn==0.5.3.1         # For time series analysis
+
+# ----------------------------------------------------------------------------
+# Threat Intelligence Specific
+# ----------------------------------------------------------------------------
+stix2==3.0.1            # For STIX/TAXII format
+taxii2-client==2.3.0    # For TAXII client
+python-cyberark==0.1.0  # Optional: For CyberArk integration
+
+# ============================================================================
+# Development Dependencies (Dev Environment Only)
+# ============================================================================
+# Uncomment for development environment
+# pip install -r requirements-dev.txt
+
+# ============================================================================
+# Optional: Install with pip
+# ============================================================================
+# pip install -r requirements.txt
+# pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118
