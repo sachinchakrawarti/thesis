@@ -1,0 +1,109 @@
+5.1 Experimental Setup
+
+Experimental workflow
+Train/test configuration
+Evaluation procedure
+
+5.2 Hardware and Software Requirements
+
+Processor, RAM, GPU
+Operating system
+Python and ML libraries
+Development environment
+
+5.3 Dataset Distribution Analysis
+
+Original dataset distribution
+Threat-category distribution
+Class imbalance analysis
+Temporal distribution
+
+5.4 Final Dataset Format
+
+Selected attributes/features
+Target labels
+Number of records
+Training, validation, and testing datasets
+
+5.5 Dataset Availability and Reproducibility
+
+Dataset source
+Data collection period
+Preprocessing and transformation
+Reproducibility considerations
+
+5.6 Model Implementation
+
+Baseline models
+Proposed classification model
+Feature extraction
+Hyperparameter configuration
+
+5.7 Classification Performance
+
+Accuracy
+Precision
+Recall
+F1-score
+ROC-AUC, where applicable
+
+5.8 Comparative Model Analysis
+
+Comparison of ML algorithms
+Proposed model vs. baseline models
+Performance improvement
+
+5.9 Confusion Matrix Analysis
+
+True positives
+True negatives
+False positives
+False negatives
+Class-wise interpretation
+
+5.10 Precision, Recall, and F1-Score Analysis
+
+Class-wise performance
+Macro/weighted averages
+Analysis of difficult threat categories
+
+5.11 Temporal Topic Analysis
+
+Topic discovery
+Topic evolution over time
+Threat-topic trends
+Temporal patterns
+
+5.12 Emerging Threat Analysis
+
+Detection of emerging topics
+Novel/rare threat patterns
+Threat emergence indicators
+Case examples
+
+5.13 Real-Time Detection Results
+
+Detection pipeline
+Processing time/latency
+Real-time classification performance
+Risk/threat alert generation
+
+5.14 Error Analysis
+
+Misclassified samples
+False positives
+False negatives
+Possible causes of classification errors
+
+5.15 Discussion of Results
+
+Major findings
+Research-objective-wise discussion
+Comparison with existing approaches
+Practical implications
+
+5.16 Limitations of the Study
+Dataset limitations
+Model limitations
+Real-time processing limitations
+Generalization limitations
