@@ -1,0 +1,245 @@
+Yes. This paper is a **good base paper for an M.Tech Data Science thesis**, especially because it combines **NLP + Machine Learning + Deep Learning + Topic Modeling + Cyber Threat Intelligence (CTI)**.
+
+The uploaded paper is titled **“Real-Time Automated Cyber Threat Classification and Emerging Threat Detection Framework”** and was published in 2025. 
+
+### What I suggest for your M.Tech thesis
+
+Instead of simply reproducing the paper, we should **extend it with a clear research contribution**.
+
+A suitable thesis title would be:
+
+> **Real-Time Cyber Threat Classification and Emerging Threat Detection Using Machine Learning and Temporal Topic Modeling**
+
+### Proposed research idea
+
+Your framework can follow this pipeline:
+
+```text
+CTI Reports / Threat Reports
+          ↓
+Data Collection
+          ↓
+Text Preprocessing
+          ↓
+Feature Extraction
+   ┌──────┴────────┐
+   ↓               ↓
+TF-IDF / BOW    Word Embeddings
+   ↓               ↓
+ML Models       Deep Learning
+   ↓               ↓
+Threat Classification
+          ↓
+Relevant CTI Reports
+          ↓
+Temporal Topic Modeling
+   ┌──────┴─────────┐
+   ↓                ↓
+   LDA              NMF
+   ↓                ↓
+Topic Evolution Over Time
+          ↓
+Emerging Threat Detection
+          ↓
+Early Warning / Threat Intelligence
+```
+
+This is closely aligned with the base paper, which performs binary/multiclass classification and then uses LDA/NMF to study topic evolution.  
+
+### Your research contribution
+
+The base paper already compares:
+
+* Random Forest
+* SVM
+* Naive Bayes
+* XGBoost
+* CNN
+* LSTM
+* BOW
+* TF-IDF
+* Word2Vec
+* Doc2Vec
+* LDA
+* NMF
+
+and reports SVM + BOW as a strong classification combination. 
+
+So **don't make your thesis contribution merely “I implemented SVM, RF, LSTM, LDA and NMF.”** That would be too close to replication.
+
+Instead, I recommend adding **temporal analysis and a stronger modern NLP model**.
+
+### Recommended M.Tech version
+
+**Phase 1 — CTI Dataset**
+
+Use publicly available:
+
+* Cybersecurity reports
+* Threat reports
+* Vulnerability descriptions
+* Security news
+* CTI feeds
+
+rather than depending on dark-web collection. The base paper itself notes that collecting data from deep/dark-web sources can involve registration, CAPTCHAs, subscriptions, and access restrictions. 
+
+**Phase 2 — Classification**
+
+Compare:
+
+```text
+Baseline:
+TF-IDF + Naive Bayes
+TF-IDF + Logistic Regression
+TF-IDF + SVM
+TF-IDF + Random Forest
+TF-IDF + XGBoost
+
+Deep Learning:
+Word2Vec + CNN
+Word2Vec + LSTM
+
+Modern model:
+BERT / cybersecurity-oriented transformer
+```
+
+**Phase 3 — Emerging Threat Detection**
+
+Use:
+
+```text
+LDA
+NMF
+BERTopic
+```
+
+and, importantly, analyze the **topic distribution over time**.
+
+For example:
+
+```text
+January
+   ↓
+Topic: Phishing
+Topic: Malware
+Topic: Ransomware
+
+February
+   ↓
+Ransomware ↑
+New Malware Topic ↑
+
+March
+   ↓
+New Topic ↑↑
+        ↓
+Potential Emerging Threat
+```
+
+The base paper specifically identifies temporal changes in topic distributions as an early signal for emerging threats, while also noting that such temporal correlation does not by itself prove causation. 
+
+### Strong research gap
+
+A good thesis gap can be framed as:
+
+> Existing CTI research has demonstrated automated threat classification and topic-based emerging threat detection, but there remains scope for integrating modern contextual language representations with temporal topic evolution to improve the identification of emerging cyber threats from continuously arriving CTI reports.
+
+This gives you a legitimate **M.Tech-level extension** rather than copying the paper.
+
+### Your 5 major research objectives
+
+1. **Develop a CTI text-processing pipeline** for collecting and preprocessing cybersecurity threat reports.
+
+2. **Develop and compare machine-learning and deep-learning models** for automated cyber-threat classification.
+
+3. **Evaluate transformer-based text representations** against conventional TF-IDF and Word2Vec representations.
+
+4. **Model temporal topic evolution** using LDA, NMF and/or BERTopic to identify changes in cybersecurity discussions.
+
+5. **Develop an emerging-threat detection mechanism** based on sudden changes in topic prevalence and threat-related terminology.
+
+### Dataset recommendation
+
+For your project, I would keep the dataset scope manageable:
+
+**Primary dataset:**
+
+> CTI Reports / Threat Reports
+
+Then create a structured dataset such as:
+
+| Field        | Example                          |
+| ------------ | -------------------------------- |
+| `report_id`  | CTI_001                          |
+| `date`       | 2025-01-15                       |
+| `title`      | New ransomware campaign detected |
+| `content`    | Threat report text...            |
+| `source`     | Security report                  |
+| `category`   | Ransomware                       |
+| `severity`   | High                             |
+| `ioc`        | IP/domain/hash                   |
+| `text_clean` | Preprocessed text                |
+
+This also fits well with your existing **cyber-threat-intelligence-framework** project/notebook.
+
+### Recommended final thesis structure
+
+```text
+Chapter 1 – Introduction
+    1.1 Background
+    1.2 Cyber Threat Intelligence
+    1.3 Problem Statement
+    1.4 Research Motivation
+    1.5 Research Objectives
+    1.6 Research Scope
+    1.7 Contributions
+    1.8 Thesis Organization
+
+Chapter 2 – Literature Review
+    2.1 Cyber Threat Intelligence
+    2.2 CTI Data Sources
+    2.3 Cyber Threat Classification
+    2.4 NLP for CTI
+    2.5 Machine Learning for CTI
+    2.6 Deep Learning for CTI
+    2.7 Transformer Models
+    2.8 Topic Modeling
+    2.9 Emerging Threat Detection
+    2.10 Research Gap
+
+Chapter 3 – Research Methodology
+    3.1 Proposed Methodology
+    3.2 Dataset Collection
+    3.3 Data Preprocessing
+    3.4 Feature Extraction
+    3.5 Threat Classification
+    3.6 Temporal Topic Modeling
+    3.7 Emerging Threat Detection
+    3.8 Evaluation Metrics
+
+Chapter 4 – Proposed Framework and Implementation
+    4.1 System Architecture
+    4.2 Data Pipeline
+    4.3 Classification Module
+    4.4 Topic Modeling Module
+    4.5 Temporal Analysis
+    4.6 Emerging Threat Scoring
+    4.7 Implementation
+
+Chapter 5 – Experimental Results and Analysis
+    5.1 Experimental Setup
+    5.2 Dataset Distribution
+    5.3 Classification Results
+    5.4 Model Comparison
+    5.5 Topic Modeling Results
+    5.6 Temporal Topic Evolution
+    5.7 Emerging Threat Detection
+    5.8 Comparative Analysis
+    5.9 Discussion
+
+Chapter 6 – Conclusion and Future Work
+```
+
+**My recommendation:** keep the **2025 paper as your base paper**, but make **Temporal Topic Modeling + modern NLP/Transformer comparison + emerging-threat scoring** your main contribution. The base paper itself identifies automatic category discovery, clustering, neural embeddings and unsupervised topic modeling as future directions, which gives you a natural extension point. 
+
+If you want, we can now build this thesis **step-by-step from the base paper**, starting with the **final M.Tech thesis title, research gap, objectives, methodology, dataset, and Chapter 1**.

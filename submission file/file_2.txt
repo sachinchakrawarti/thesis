@@ -1,0 +1,22 @@
+Chapter 1 – Introduction
+
+1.1 Background
+
+1.2 Cyber Threat Intelligence
+    1.2.1 Definition of Cyber Threat Intelligence
+    1.2.2 Types of Cyber Threat Intelligence
+    1.2.3 CTI Sources
+    1.2.4 CTI Lifecycle
+    1.2.5 Role of AI and Machine Learning in CTI
+
+1.3 Problem Statement
+
+1.4 Research Motivation
+
+1.5 Research Objectives
+
+1.6 Research Scope
+
+1.7 Contributions
+
+1.8 Thesis Organization
