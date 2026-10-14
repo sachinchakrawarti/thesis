@@ -1,0 +1,40 @@
+PHASE 3 -- TOPIC MODELING VALIDATION
+==============================================================
+
+1. NMF topics
+--------------------------------------------------------------
+  T1 ( 2205 docs): reportedly used, affecting, reportedly, mapped observed, mapped, malicious activity, observed behavior, organizations security, security researchers, actor
+  T2 ( 2291 docs): activity corresponds, campaign used, ck observed, ck, behavior involving, investigation activity, intelligence monitoring, intelligence, detected behavior, sector researchers
+  T3 ( 2216 docs): severity observed, affected systems, activity associated, affected, severity, additional activity, organizations activity, associated, additional, campaign affected
+  T4 ( 2250 docs): sector located, located, involved, identified use, campaign targeted, use, targeted organizations, activity identified, targeted, campaign
+  T5 ( 1038 docs): financial, financial services, services, services organizations, targeting financial, services sector, organizations financial, activity financial, affecting financial, remote
+
+2. LDA topics
+--------------------------------------------------------------
+  T1 (  917 docs): campaign, identified, sector, organizations threat, behavior, involving, used, threat, researchers identified, researchers
+  T2 ( 2463 docs): malicious, access, security, activity mapped, activity involving, mapped observed, malicious activity, actor, followed, incident affecting
+  T3 ( 2528 docs): campaign, targeted, located, campaign targeted, activity identified, involved, sector located, use, targeted organizations, identified use
+  T4 ( 1624 docs): campaign, researchers, researchers identified, threat, used, involving, behavior, organizations threat, intelligence monitoring, intelligence
+  T5 ( 2468 docs): campaign, systems, sector, additional activity, associated, affected systems, activity associated, severity observed, severity, campaign affected
+
+3. Alignment with ground-truth categories
+--------------------------------------------------------------
+  NMF     NMI=0.0009  ARI=-0.0001
+  LDA     NMI=0.0012  ARI=0.0001
+
+4. Topic purity (best-matching category)
+--------------------------------------------------------------
+  T1: Malware                purity=0.109 (240/2205)
+  T2: Ransomware             purity=0.105 (241/2291)
+  T3: Credential Theft       purity=0.110 (244/2216)
+  T4: Web Attack             purity=0.117 (263/2250)
+  T5: Vulnerability          purity=0.122 (127/1038)
+
+5. Interpretation guide
+--------------------------------------------------------------
+  NMI >= 0.6 : topics recover categories well
+  0.3 <= NMI < 0.6 : moderate alignment
+  NMI < 0.3 : weak alignment -- report as limitation
+
+  Topic purity >= 0.7 : topic is dominated by one category
+  Topic purity < 0.4 : topic mixes multiple categories

@@ -1,14 +1,52 @@
-﻿__pycache__/
-*.pyc
-*.pyo
-*.pkl
-*.h5
-*.model
-*.dict
-uploads/
-outputs/logs/
-models/
-.env
-venv/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+build/
+dist/
 .venv/
+venv/
+env/
+
+# Jupyter
 .ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Project artifacts (large, regenerable)
+artifacts/*.joblib
+artifacts/*.pkl
+artifacts/final/*.png
+artifacts/final/*.pdf
+
+# Data (large)
+uploads/*.pdf
+!uploads/.gitkeep
+
+# Backups
+*.bak
+*.backup
+*_backup/
+backup/
+brackup/
+
+# Logs
+*.log
+logs/
+
+# Secrets
+.env
+.env.local
+secrets.*

@@ -1,0 +1,38 @@
+PHASE 2 -- LEAKAGE AUDIT & HONEST BASELINES
+============================================================
+
+1. Leakage audit (raw text)
+------------------------------------------------------------
+  Vulnerability          100.00%  (cleaned:   0.00%)
+  Phishing                22.67%  (cleaned:   0.00%)
+  Ransomware              10.41%  (cleaned:   0.00%)
+  Web Attack              10.40%  (cleaned:   0.00%)
+  DDoS                    10.27%  (cleaned:   0.00%)
+  Credential Theft         9.93%  (cleaned:   0.00%)
+  Data Breach              9.90%  (cleaned:   0.00%)
+  Botnet                   9.87%  (cleaned:   0.00%)
+  Malware                  9.86%  (cleaned:   0.00%)
+  Insider Threat           9.33%  (cleaned:   0.00%)
+
+2. Evaluation conditions (weighted F1)
+------------------------------------------------------------
+  Random / Raw             Logistic Regression    acc=1.0000  f1_w=1.0000  f1_m=1.0000
+  Random / Raw             Multinomial NB         acc=1.0000  f1_w=1.0000  f1_m=1.0000
+  Random / Raw             Linear SVM             acc=1.0000  f1_w=1.0000  f1_m=1.0000
+  Random / Clean           Logistic Regression    acc=0.8600  f1_w=0.8626  f1_m=0.8617
+  Random / Clean           Multinomial NB         acc=0.8540  f1_w=0.8565  f1_m=0.8559
+  Random / Clean           Linear SVM             acc=0.8610  f1_w=0.8620  f1_m=0.8612
+  Chrono / Clean           Logistic Regression    acc=0.8551  f1_w=0.8586  f1_m=0.8574
+  Chrono / Clean           Multinomial NB         acc=0.8521  f1_w=0.8539  f1_m=0.8531
+  Chrono / Clean           Linear SVM             acc=0.8511  f1_w=0.8530  f1_m=0.8515
+  Random / Clean / Dummy   Dummy (most_frequent)  acc=0.1040  f1_w=0.0196  f1_m=0.0188
+
+3. Headline numbers
+------------------------------------------------------------
+  Random / Raw      F1 = 1.0000
+  Random / Clean    F1 = 0.8626
+  Chrono / Clean    F1 = 0.8586
+  Dummy floor       F1 = 0.0196
+
+  Leakage drop (raw -> clean):       +0.1374
+  Generalization gap (clean random -> chrono): +0.0040
