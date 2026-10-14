@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTI Threat Analysis</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">CTI</div>
+      <div>
+        <h1>Threat Analysis Console</h1>
+        <p class="subtitle">Document extraction &middot; classification &middot; emerging threats</p>
+      </div>
+    </div>
+    <div class="status" id="status">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusText">Checking backend&hellip;</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel upload-panel">
+      <h2>1 &middot; Upload CTI documents</h2>
+      <p class="hint">Drop PDF / DOCX / TXT / HTML files. Filenames with <code>YYYY-MM</code> improve trend detection.</p>
+
+      <label for="fileInput" class="dropzone" id="dropzone">
+        <input id="fileInput" type="file" multiple accept=".pdf,.docx,.doc,.txt,.md,.html,.htm" hidden />
+        <div class="dz-icon">&#11014;</div>
+        <div class="dz-title">Click to choose files</div>
+        <div class="dz-sub">or drag &amp; drop them here</div>
+        <ul id="fileList" class="file-list"></ul>
+      </label>
+
+      <div class="actions">
+        <button id="analyzeBtn" class="btn primary" disabled>Analyze</button>
+        <button id="demoBtn"    class="btn ghost">Load demo corpus</button>
+        <button id="resetBtn"   class="btn ghost">Reset</button>
+      </div>
+    </section>
+
+    <section class="panel kpis-panel">
+      <h2>2 &middot; Summary</h2>
+      <div class="kpis">
+        <div class="kpi"><span class="kpi-label">Documents</span><span class="kpi-value" id="kpiDocs">&mdash;</span></div>
+        <div class="kpi"><span class="kpi-label">Categories</span><span class="kpi-value" id="kpiCats">&mdash;</span></div>
+        <div class="kpi"><span class="kpi-label">Alerts</span><span class="kpi-value" id="kpiAlerts">&mdash;</span></div>
+        <div class="kpi"><span class="kpi-label">Avg confidence</span><span class="kpi-value" id="kpiConf">&mdash;</span></div>
+      </div>
+    </section>
+
+    <section class="panel results-panel">
+      <h2>3 &middot; Classification results</h2>
+      <div class="table-wrap">
+        <table id="classTable">
+          <thead>
+            <tr>
+              <th>File</th><th>Words</th><th>Predicted category</th>
+              <th>Confidence</th><th>Date</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel charts-panel">
+      <h2>4 &middot; Distributions</h2>
+      <div class="charts">
+        <div class="chart-card">
+          <h3>Predicted categories</h3>
+          <canvas id="chartCategories"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Monthly dominant topic share</h3>
+          <canvas id="chartTopics"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel alerts-panel">
+      <h2>5 &middot; Emerging-threat alerts</h2>
+      <p class="hint">Topic share increases &ge; 10&nbsp;pp with &ge; 2 reports in the current month.</p>
+      <div class="table-wrap">
+        <table id="alertTable">
+          <thead>
+            <tr>
+              <th>Previous month</th><th>Current month</th><th>Topic</th>
+              <th>Prev share</th><th>Curr share</th><th>&Delta; (pp)</th><th>Count</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="empty" id="alertsEmpty" hidden>No alerts yet.</div>
+    </section>
+
+    <section class="panel logs-panel">
+      <h2>6 &middot; Log</h2>
+      <pre id="log"></pre>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span>CTI Threat Analysis &middot; local only</span>
+    <span id="backendUrl"></span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
