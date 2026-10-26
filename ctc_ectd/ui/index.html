@@ -1,117 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CTI Threat Analysis</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>CTI Automated Classification &amp; Evolving Threat Forecasting</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand-500: #2563eb;
+      --color-brand-600: #1d4ed8;
+      --color-accent-500: #7c3aed;
+    }
+  </style>
+  <style>
+    .chart svg { display:block; max-width:100%; }
+    .chart { min-height:340px; display:flex; align-items:center; justify-content:center; }
+    ::-webkit-scrollbar { height:6px; width:6px; }
+    ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+    .fade-in { animation: fadeIn 0.25s ease-out; }
+  </style>
 </head>
-<body>
-  <header class="app-header">
-    <div class="brand">
-      <div class="logo">CTI</div>
-      <div>
-        <h1>Threat Analysis Console</h1>
-        <p class="subtitle">Document extraction &middot; classification &middot; emerging threats</p>
+<body class="bg-slate-100 text-slate-900 antialiased font-sans">
+
+  <div class="bg-slate-950 border-b border-slate-800 py-3 sticky top-0 z-20">
+    <div class="max-w-[1240px] mx-auto px-6 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="bg-gradient-to-br from-brand-500 to-accent-500 text-white font-extrabold tracking-wide px-3 py-2 rounded-xl text-xs">CTI</div>
+        <div>
+          <div class="text-slate-200 font-semibold text-sm">Threat Intelligence Platform</div>
+          <div class="text-slate-400 text-xs">Automated Classification &amp; Evolving Threat Forecasting</div>
+        </div>
+      </div>
+      <div id="status" class="flex items-center gap-2 text-xs text-slate-300 bg-slate-800/80 px-3 py-1.5 rounded-full">
+        <span class="dot w-2 h-2 rounded-full bg-slate-500"></span>
+        <span id="status-text">Checking API…</span>
       </div>
     </div>
-    <div class="status" id="status">
-      <span class="dot" id="statusDot"></span>
-      <span id="statusText">Checking backend&hellip;</span>
+  </div>
+
+  <header class="bg-gradient-to-b from-slate-950 to-slate-900 text-slate-200 py-10 border-b border-slate-800">
+    <div class="max-w-[1240px] mx-auto px-6">
+      <h1 class="text-2xl md:text-3xl font-bold text-white leading-tight max-w-4xl">
+        Cyber Threat Intelligence Automated Classification and Evolving Threat Forecasting
+        <span class="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">via Temporal Graph Networks</span>
+      </h1>
     </div>
   </header>
 
-  <main class="layout">
-    <section class="panel upload-panel">
-      <h2>1 &middot; Upload CTI documents</h2>
-      <p class="hint">Drop PDF / DOCX / TXT / HTML files. Filenames with <code>YYYY-MM</code> improve trend detection.</p>
-
-      <label for="fileInput" class="dropzone" id="dropzone">
-        <input id="fileInput" type="file" multiple accept=".pdf,.docx,.doc,.txt,.md,.html,.htm" hidden />
-        <div class="dz-icon">&#11014;</div>
-        <div class="dz-title">Click to choose files</div>
-        <div class="dz-sub">or drag &amp; drop them here</div>
-        <ul id="fileList" class="file-list"></ul>
-      </label>
-
-      <div class="actions">
-        <button id="analyzeBtn" class="btn primary" disabled>Analyze</button>
-        <button id="demoBtn"    class="btn ghost">Load demo corpus</button>
-        <button id="resetBtn"   class="btn ghost">Reset</button>
+  <main class="max-w-[1240px] mx-auto px-6 py-7">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex items-center gap-3">
+        <div class="text-2xl">📊</div>
+        <div><span class="text-2xl font-bold" id="kpi-training">—</span>
+          <div class="text-slate-500 text-[11px] uppercase tracking-wide">Training reports</div></div>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex items-center gap-3">
+        <div class="text-2xl">📄</div>
+        <div><span class="text-2xl font-bold" id="kpi-uploads">—</span>
+          <div class="text-slate-500 text-[11px] uppercase tracking-wide">Uploaded docs</div></div>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex items-center gap-3">
+        <div class="text-2xl">🏷️</div>
+        <div><span class="text-2xl font-bold" id="kpi-categories">—</span>
+          <div class="text-slate-500 text-[11px] uppercase tracking-wide">Categories</div></div>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex items-center gap-3">
+        <div class="text-2xl">⚠️</div>
+        <div><span class="text-2xl font-bold" id="kpi-alerts">—</span>
+          <div class="text-slate-500 text-[11px] uppercase tracking-wide">Emerging alerts</div></div>
       </div>
     </section>
 
-    <section class="panel kpis-panel">
-      <h2>2 &middot; Summary</h2>
-      <div class="kpis">
-        <div class="kpi"><span class="kpi-label">Documents</span><span class="kpi-value" id="kpiDocs">&mdash;</span></div>
-        <div class="kpi"><span class="kpi-label">Categories</span><span class="kpi-value" id="kpiCats">&mdash;</span></div>
-        <div class="kpi"><span class="kpi-label">Alerts</span><span class="kpi-value" id="kpiAlerts">&mdash;</span></div>
-        <div class="kpi"><span class="kpi-label">Avg confidence</span><span class="kpi-value" id="kpiConf">&mdash;</span></div>
-      </div>
-    </section>
+    <nav id="tabs" class="flex gap-1 mb-4 overflow-x-auto border-b border-slate-200">
+      <button class="tab" data-tab="predict">🔍 Predict</button>
+      <button class="tab" data-tab="overview">📈 Overview</button>
+      <button class="tab" data-tab="models">🧪 Models</button>
+      <button class="tab" data-tab="docs">📁 Documents</button>
+      <button class="tab" data-tab="temporal">🕒 Temporal</button>
+      <button class="tab" data-tab="alerts">🚨 Alerts</button>
+    </nav>
 
-    <section class="panel results-panel">
-      <h2>3 &middot; Classification results</h2>
-      <div class="table-wrap">
-        <table id="classTable">
-          <thead>
-            <tr>
-              <th>File</th><th>Words</th><th>Predicted category</th>
-              <th>Confidence</th><th>Date</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="panel charts-panel">
-      <h2>4 &middot; Distributions</h2>
-      <div class="charts">
-        <div class="chart-card">
-          <h3>Predicted categories</h3>
-          <canvas id="chartCategories"></canvas>
-        </div>
-        <div class="chart-card">
-          <h3>Monthly dominant topic share</h3>
-          <canvas id="chartTopics"></canvas>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel alerts-panel">
-      <h2>5 &middot; Emerging-threat alerts</h2>
-      <p class="hint">Topic share increases &ge; 10&nbsp;pp with &ge; 2 reports in the current month.</p>
-      <div class="table-wrap">
-        <table id="alertTable">
-          <thead>
-            <tr>
-              <th>Previous month</th><th>Current month</th><th>Topic</th>
-              <th>Prev share</th><th>Curr share</th><th>&Delta; (pp)</th><th>Count</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      <div class="empty" id="alertsEmpty" hidden>No alerts yet.</div>
-    </section>
-
-    <section class="panel logs-panel">
-      <h2>6 &middot; Log</h2>
-      <pre id="log"></pre>
-    </section>
+    <div id="panel-host" class="bg-white border border-slate-200 rounded-xl p-7 shadow-md min-h-[400px]"></div>
   </main>
 
-  <footer class="app-footer">
-    <span>CTI Threat Analysis &middot; local only</span>
-    <span id="backendUrl"></span>
+  <footer class="text-center text-slate-500 text-xs py-6 pb-10 px-6">
+    Research pipeline · Cyber Threat Intelligence Automated Classification &amp; Evolving Threat Forecasting via Temporal Graph Networks
+    · Backend: <code id="api-base" class="bg-slate-200 px-2 py-0.5 rounded text-[11px]">—</code>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-  <script src="config.js"></script>
-  <script src="app.js"></script>
+  <script src="/ui/config.js"></script>
+  <script src="/ui/app.js"></script>
 </body>
 </html>

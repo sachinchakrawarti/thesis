@@ -1,0 +1,7 @@
+
+The threat actor exploited CVE-2023-23397 to gain initial access via Outlook.
+A malicious DLL named glib-2.0.dll was dropped in the %PUBLIC% folder.
+The loader contacted a hardcoded C2 server at 185.220.101.15 over an SSL socket.
+Credentials were harvested from compromised cloud accounts using a phishing kit.
+Ransomware activity was observed against the subsidiary, with the CyberVolk family encrypting files.
+North Korean actors were attributed to a separate campaign targeting financial institutions.

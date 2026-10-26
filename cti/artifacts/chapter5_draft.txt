@@ -1,0 +1,19 @@
+
+CHAPTER 5 — DRAFT RESULTS PARAGRAPH
+
+On the SMAH-CTI document-level split (9020 training and
+3284 test sentences), the tuned TF-IDF baseline achieved
+macro-F1 = 0.7232. 
+
+The best configuration (Hybrid (TF-IDF + SBERT) + LinearSVC) improved macro-F1 to
+0.7470 (+0.0238 vs baseline), showing that semantic
+information complements lexical features on this task.
+
+For emerging-threat detection, BERTopic discovered 24 coherent
+topics with c_v coherence = 0.4659 and diversity =
+0.7917. The discovered topics correspond to analyst-recognisable
+threat campaigns including North Korean (DPRK) operations, ransomware families
+(CyberVolk, HexaLocker), Fortinet device compromise (TableFlip), Scattered Spider's
+RaaS activity, Sandworm's CaddyWiper OT attacks, and Israeli-Iranian cyber operations,
+indicating that BERTopic produces semantically meaningful clusters suitable for
+CTI analyst triage.

@@ -1,0 +1,12 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+python-multipart==0.0.9
+pymupdf==1.24.10
+sentence-transformers==3.1.1
+scikit-learn==1.5.2
+bertopic==0.16.4
+umap-learn==0.5.6
+hdbscan==0.8.40
+joblib==1.4.2
+numpy==1.26.4
+pandas==2.2.3

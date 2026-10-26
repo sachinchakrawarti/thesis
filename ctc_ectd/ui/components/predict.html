@@ -1,0 +1,43 @@
+﻿<div class="fade-in">
+  <h2 class="text-lg font-bold mb-1">Classify CTI documents</h2>
+  <p class="text-sm text-slate-500 mb-5">Upload one or more files (PDF, DOCX, TXT, MD, HTML). Each will be classified independently.</p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div>
+      <label for="file-input"
+        class="flex flex-col items-center justify-center border-2 border-dashed border-slate-300 hover:border-brand-500 rounded-xl p-8 cursor-pointer bg-slate-50 hover:bg-blue-50/50 transition">
+        <div class="text-3xl mb-2">📤</div>
+        <div class="text-sm font-medium text-slate-700">Click to choose files</div>
+        <div class="text-xs text-slate-500 mt-1">Multiple files supported · PDF · DOCX · TXT · MD · HTML</div>
+        <input id="file-input" type="file" class="hidden" multiple
+          accept=".pdf,.docx,.txt,.md,.html,.htm" />
+      </label>
+
+      <ul id="file-list" class="mt-3 text-xs bg-slate-50 border border-slate-200 rounded-lg p-3 divide-y divide-slate-100 hidden"></ul>
+
+      <button id="btn-upload"
+        class="mt-4 bg-brand-500 hover:bg-brand-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition w-full disabled:opacity-50 disabled:cursor-not-allowed"
+        disabled>▶ Classify</button>
+    </div>
+
+    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 min-h-[260px] overflow-y-auto max-h-[600px]" id="predict-result">
+      <div class="flex flex-col items-center justify-center text-slate-500 h-full min-h-[220px] gap-2">
+        <div class="text-3xl opacity-70">🔮</div>
+        <p class="text-sm">Predictions will appear here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMERGING THREAT PREVIEW -->
+  <div class="mt-8">
+    <div class="flex items-center justify-between mb-3">
+      <div>
+        <h3 class="text-base font-bold">🚨 Emerging-threat preview</h3>
+        <p class="text-sm text-slate-500">Top 3 topic share spikes — see the <strong>Alerts</strong> tab for the full list.</p>
+      </div>
+    </div>
+    <div id="predict-emerging" class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-slate-700">
+      <p class="text-slate-500 italic text-sm">Loading alerts…</p>
+    </div>
+  </div>
+</div>

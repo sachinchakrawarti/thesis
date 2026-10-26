@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.12.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chapter 1</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      color: light-dark(#1a1a1a, #fdfdfd);
+      background-color: #fdfdfd;
+      background-color: light-dark(#fdfdfd, #1a1a1a);
+      color-scheme: light dark;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        color-scheme: light only;
+      }
+      html, body, pre, code {
+        background-color: transparent;
+      }
+      body, a, a:visited, blockquote {
+        color: black;
+      }
+      pre, code {
+        padding: 0;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid;
+      border-color: #e6e6e6;
+      border-color: light-dark(#e6e6e6, #4c4c4c);
+      color: #606060;
+      color: light-dark(#606060, #b6b6b6);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid currentColor;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
+    }
+    th {
+      border-top: 1px solid currentColor;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Chapter 1</h1>
+</header>
+<h1 id="chapter-1-introduction">Chapter 1: Introduction</h1>
+<h2 id="background-and-motivation">1.1 Background and Motivation</h2>
+<h3 id="the-new-world-disaster-of-cyber-threat-overload">1.1.1 The New
+World Disaster of Cyber Threat Overload</h3>
+<p>In the 21st century, the volume of cyber threat intelligence (CTI)
+data has become a major issue of concern regarding organizational
+security. Even though the world has become more digitally connected than
+ever before due to technological progress, security analysts have become
+overwhelmed by unstructured data from vendor reports, dark web forums,
+and security blogs. CTI is described as the collection, analysis, and
+dissemination of information regarding current and potential cyber
+threats. It indicates perceived weaknesses and attack vectors that
+malicious actors use to compromise systems.</p>
+<p>Empirical evidence has demonstrated that unprocessed CTI can lead to
+many negative consequences, such as:</p>
+<ul>
+<li>Delayed incident response.</li>
+<li>Failure to detect zero-day exploits.</li>
+<li>Worsened data breaches.</li>
+<li>Financial loss and reputational damage.</li>
+<li>Compromised infrastructure.</li>
+<li>Elevated risk of ransomware attacks.</li>
+</ul>
+<p>Constant information overload also affects the productivity of
+cybersecurity teams and their ability to secure critical infrastructure.
+As the communication process is becoming more digitalized, threat actors
+are becoming more vocal about their tactics on the internet (e.g.,
+hacker forums), and in many cases, they share vulnerabilities more
+openly than during physical meetings.</p>
+<h3 id="weaknesses-of-standard-threat-classification-measures">1.1.2
+Weaknesses of Standard Threat Classification Measures</h3>
+<p>Years ago, cybersecurity systems used standardized measurements in
+the form of rule-based detection, such as:</p>
+<ul>
+<li>Signature-based IDS (Intrusion Detection Systems).</li>
+<li>Keyword search.</li>
+<li>Manual review by analysts.</li>
+</ul>
+<p>As much as these instruments are valid and acceptable in
+cybersecurity research, there are a number of limitations associated
+with them:</p>
+<ol type="1">
+<li>Reliance on exact keyword matches.</li>
+<li>Failure to understand semantic context (e.g., missing a threat
+described using synonyms).</li>
+<li>Low repetitiveness and scalability.</li>
+<li>Lack of capacity to offer real-time monitoring of massive text
+streams.</li>
+</ol>
+<p>Such limitations bring about the necessity of using alternative
+methods which will enable continuous, automated, and scalable detection
+of cyber threat indicators.</p>
+<h3 id="vigor-of-computational-threat-intelligence">1.1.3 Vigor of
+Computational Threat Intelligence</h3>
+<p>The sheer increase in the development of the internet and underground
+forums (e.g., dark web, Reddit) has produced huge amounts of textual
+data. These sites are often used by attackers to communicate:</p>
+<ul>
+<li>Exploit codes.</li>
+<li>Malware updates.</li>
+<li>Command and Control (C2) discussions.</li>
+<li>Exfiltrated data.</li>
+</ul>
+<p>Computational Threat Intelligence has developed into an
+interdisciplinary system of using Artificial Intelligence and Natural
+Language Processing to analyze digital footprints and extract actionable
+information about a threat actor.</p>
+<p>Initial methodologies of calculation involved:</p>
+<ul>
+<li>Lexicon-based sentiment analysis.</li>
+<li>Bag-of-Words (BOW) models.</li>
+<li>Traditional machine learning classifiers.</li>
+</ul>
+<p>Nevertheless, these approaches do not represent more contextual
+relationships in language, especially when dealing with complex
+cybersecurity terminology.</p>
+<h3 id="revolution-in-transformer-in-nlp">1.1.4 Revolution in
+Transformer in NLP</h3>
+<p>Transformer-based architecture introductions became a paradigm change
+in Natural Language Processing. Transformers, in contrast to recurrent
+or convolutional neural networks, use self-attention mechanisms that
+allow:</p>
+<ul>
+<li>Long-distance dependency modeling.</li>
+<li>Semantic perception through contextual understanding.</li>
+<li>Parallelized training.</li>
+<li>Dynamic contextual embeddings.</li>
+</ul>
+<p>There are models like Sentence-BERT (SBERT) and RoBERTa which exhibit
+better contextual understanding than traditional word embeddings.
+Contextual modeling is critical in the case of cyber threat detection
+since the manifestations of threats are frequently:</p>
+<ul>
+<li>Indirect.</li>
+<li>Obfuscated.</li>
+<li>Context-dependent.</li>
+<li>Not overtly malicious, but subtle.</li>
+</ul>
+<h3 id="requirement-of-emerging-threat-detection">1.1.5 Requirement of
+Emerging Threat Detection</h3>
+<p>Traditional classification models are black-box models that focus
+only on static categories (e.g., “Malware” or “Phishing”). They do not
+offer reasoning about how the threat landscape is changing. In modern
+cybersecurity, transparency and temporal awareness are of concern:</p>
+<ul>
+<li>Zero-day detection.</li>
+<li>Trend analysis.</li>
+<li>Algorithmic bias toward known threats.</li>
+<li>Proactive defense.</li>
+</ul>
+<p>Topic Modeling techniques, specifically BERTopic, strive to explain
+and group hidden patterns in the data. By analyzing the frequency of
+topics over time, we can map:</p>
+<ul>
+<li>Global topic importance (overall threat landscape).</li>
+<li>Local explanation of emerging trends.</li>
+</ul>
+<p>Interpretability and temporal awareness are not options in the
+context of cybersecurity; they are requirements.</p>
+<h3 id="transitioning-between-detection-and-mitigation">1.1.6
+Transitioning between Detection and Mitigation</h3>
+<p>The majority of computational systems end at the classification
+output. It is, however, true that prediction without actionable
+visualization is of little use in society. Premature identification
+should be accompanied by an elaborated dashboard to assist in
+action.</p>
+<p>The study will thus include a <strong>FastAPI-based Web
+Dashboard</strong> mapping the severity of the predicted threats to
+suitable categories of intervention:</p>
+<ul>
+<li>Visual alerts for zero-day exploits.</li>
+<li>Interactive MITRE ATT&amp;CK distribution charts.</li>
+<li>Trending topic timelines for emerging threats.</li>
+</ul>
+<p>This changes the paradigm from passive analytics to active, real-time
+support.</p>
+<figure>
+<img
+src="assets/Figure%201.1%20Proposed%20Workflow%20for%20Cyber%20Threat%20Classification%20and%20Emerging%20Threat%20Detection.png"
+alt="Fig. 1.1 Proposed Workflow for Cyber Threat Classification and Emerging Threat Detection" />
+<figcaption aria-hidden="true">Fig. 1.1 Proposed Workflow for Cyber
+Threat Classification and Emerging Threat Detection</figcaption>
+</figure>
+<p><em>Fig. 1.1 Proposed workflow for CTI collection, classification,
+and emerging threat detection.</em></p>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="problem-statement">1.2 Problem Statement</h2>
+<p>Despite the developments in computational approaches to threat
+detection, the current CTI systems have five significant drawbacks:</p>
+<ol type="1">
+<li><strong>Binary Simplification:</strong> Threat relevance is often
+treated as a binary issue, and systems disregard the severity or
+temporal progression of attacks.</li>
+<li><strong>Shallow Context Modeling:</strong> The classic ML models do
+not learn fine-grained contextual relations. They rely on TF-IDF and
+fail to understand the semantic meaning of cybersecurity language.</li>
+<li><strong>Failure to Attend to Temporal Indicators:</strong> The
+frequency of attacks, patterns in terms of time, and the evolution of
+topics are frequently overlooked. Systems cannot identify a sudden rise
+in a specific malware campaign.</li>
+<li><strong>Lack of Explainability:</strong> Deep learning models do not
+offer reasoning transparency in their predictions. Analysts cannot see
+<em>why</em> the model flagged a sentence.</li>
+<li><strong>Lack of Intervention Mapping:</strong> The outcomes of the
+detection are not converted into support mechanisms (like visual alerts,
+trending charts, or downloadable reports) which can be implemented.</li>
+</ol>
+<p>Thus, it is necessary to have a thorough, fine-grained, temporally
+aware, and user-friendly AI model for the detection of cyber
+threats.</p>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="research-objectives">1.3 Research Objectives</h2>
+<p>The overall aim of the study is to develop and test an automated AI
+system on transformer and topic modeling, grounded on contextual and
+temporal modeling, to predict cyber threats at early stages and identify
+emerging campaigns.</p>
+<p><strong>Specific Objectives:</strong></p>
+<ol type="1">
+<li>Create a binary relevance classification model (Relevant
+vs. Irrelevant) using Sentence-BERT.</li>
+<li>Fine-tune a multi-class SVM classifier to map text to MITRE
+ATT&amp;CK techniques.</li>
+<li>Apply BERTopic (UMAP + HDBSCAN) to learn and group semantic
+topics.</li>
+<li>Develop a temporal rule-based engine to detect emerging threat
+trends.</li>
+<li>Build a FastAPI web-based recommendation system for analyst
+intervention.</li>
+</ol>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="research-questions">1.4 Research Questions</h2>
+<ol type="1">
+<li>To what extent can cyber threat expressions that are subtle be
+identified by transformer-based contextual embeddings?</li>
+<li>Can multi-class technique classification lead to a significant
+improvement in actionable intelligence?</li>
+<li>Would BERTopic temporal analysis give operationally interpretable
+results for emerging threats?</li>
+<li>What is the way to map the results of classification to a structured
+web-based mitigation plan?</li>
+<li>How well does the proposed model work with unstructured, noisy PDF
+data?</li>
+</ol>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="scope-and-significance-of-the-study">1.5 Scope and Significance
+of the Study</h2>
+<h3 id="scope">Scope</h3>
+<p>This study focuses on:</p>
+<ul>
+<li>Cybersecurity text in English (PDF reports).</li>
+<li>Binary and multi-class threat detection.</li>
+<li>Fusion of semantic text and temporal topic features.</li>
+<li>BERTopic-based emerging threat detection.</li>
+<li>Design of an interactive web dashboard.</li>
+<li>The system should be used as a supportive AI tool, and not an
+automated diagnostic or mitigation tool.</li>
+</ul>
+<h3 id="significance">Significance</h3>
+<ul>
+<li><strong>Scientific Significance:</strong> Integrates fine-grained
+semantic classification with temporal topic modeling, developing
+computational threat intelligence research.</li>
+<li><strong>Technological Significance:</strong> Shows that it is able
+to combine contextual embeddings and temporal signals effectively in a
+real-world pipeline.</li>
+<li><strong>Ethical Significance:</strong> Further increases open and
+responsible AI in sensitive areas like cyber defense.</li>
+<li><strong>Societal Significance:</strong> Allows preventing vulnerable
+organizations at an early stage of exploitation and offering them a
+structured intervention via the UI.</li>
+</ul>
+<div style="page-break-after: always;">
+
+</div>
+<h2 id="research-contributions">1.6 Research Contributions</h2>
+<p>This thesis contributes:</p>
+<ol type="1">
+<li>A cyber threat classification framework based on fine-grained
+transformer-based relevance classification.</li>
+<li>Context-embeddings and fusion of multi-class technique
+classification.</li>
+<li>BERTopic Explainability and Temporal Trend Detection of Emerging
+Threats.</li>
+<li>A mitigation recommendation dashboard of pre-emptive action.</li>
+<li>Fully experimental validation with skewed PDF data.</li>
+<li>A scalable, web-based architecture to be used in real-world security
+operations.</li>
+</ol>
+</body>
+</html>

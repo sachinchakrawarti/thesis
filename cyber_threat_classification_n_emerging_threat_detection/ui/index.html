@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTI Analyser</title>
+  <link rel="stylesheet" href="/ui/css/style.css" />
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">
+        <span class="icon">🛡️</span> 
+        <h1>CTI ANALYSER</h1>
+      </div>
+      <div class="header-right">
+        <span class="badge">Local Demo</span>
+        <span class="status-dot"></span> Online
+      </div>
+    </header>
+
+    <main class="app-main">
+      
+      <!-- Upload Section -->
+      <section class="card">
+        <h2 class="card-title">Upload Threat Intelligence Report</h2>
+        <div class="upload-zone">
+          <input type="file" id="pdfInput" accept="application/pdf" />
+          <button id="analyseBtn">Analyse PDF</button>
+          <span id="status" class="status-text"></span>
+        </div>
+      </section>
+
+      <div id="results" class="hidden">
+        
+        <!-- Metrics Row -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-label">Total Sentences</span>
+            <span class="metric-value" id="nSentences">-</span>
+          </div>
+          <div class="metric-card highlight-green">
+            <span class="metric-label">Relevant CTI</span>
+            <span class="metric-value" id="nRelevant">-</span>
+          </div>
+          <div class="metric-card highlight-red">
+            <span class="metric-label">Irrelevant</span>
+            <span class="metric-value" id="nIrrelevant">-</span>
+          </div>
+          <div class="metric-card highlight-blue">
+            <span class="metric-label">Top Technique</span>
+            <span class="metric-value text-sm" id="topTech">-</span>
+          </div>
+        </div>
+
+        <!-- Model Performance -->
+        <section class="card">
+          <h2 class="card-title">Model Performance</h2>
+          <table class="data-table">
+            <thead>
+              <tr><th>Model</th><th>Accuracy</th><th>Macro-F1</th></tr>
+            </thead>
+            <tbody id="perfBody">
+              <tr><td colspan="3" class="text-muted">Loading performance data...</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="grid-2col">
+          <!-- Technique Chart -->
+          <section class="card">
+            <h2 class="card-title">Technique Distribution</h2>
+            <div id="techChart" class="chart-container"></div>
+          </section>
+
+          <!-- Relevant Sentences -->
+          <section class="card">
+            <h2 class="card-title">Representative Sentences</h2>
+            <ul id="sentList" class="sentence-list"></ul>
+          </section>
+        </div>
+
+        <!-- Emerging Threats -->
+        <section class="card threat-card">
+          <h2 class="card-title text-red">🚨 Emerging Threat Monitor</h2>
+          <div id="emergingBox" class="alert-box">
+            Processing temporal trends...
+          </div>
+          <div id="topicChart" class="chart-container"></div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>Prototype Notice: Findings are rule-based temporal signals, not confirmed incidents.</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="/ui/js/app.js"></script>
+</body>
+</html>

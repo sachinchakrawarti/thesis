@@ -1,0 +1,2 @@
+threatcluster/cve-exploitation-signals	Relevance Classifier & BERTopic Emerging Threats	Real CVE text, real exploit_count (for labels), and KEV dates (for temporal trends).
+CIRCL/vulnerability-attack-techniques	Technique Classifier	1,207 real CVEs with expert-verified MITRE ATT&CK labels (e.g., T1190).

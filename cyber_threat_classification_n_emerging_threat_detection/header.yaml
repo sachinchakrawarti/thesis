@@ -1,0 +1,16 @@
+﻿---
+geometry: "a4paper, margin=2.5cm"
+fontsize: 11pt
+linestretch: 1.15
+papersize: a4
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[R]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \usepackage{graphicx}
+  \usepackage{float}
+  \usepackage{hyperref}
+  \hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+---

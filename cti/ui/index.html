@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTI Threat Report Analyzer</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>CTI Threat Report Analyzer</h1>
+    <p>Upload a threat report to classify its relevance, detect emerging threats, and identify the attack type</p>
+  </header>
+
+  <!-- Input panel -->
+  <div class="panel" id="input-panel">
+    <h2>1. Provide Report</h2>
+
+    <div class="dropzone" id="dropzone">
+      <div class="icon">📄</div>
+      <p><b>Drop a PDF or TXT file here</b></p>
+      <p>or click to browse</p>
+      <div class="filename hidden" id="filename"></div>
+      <input type="file" id="file-input" accept=".pdf,.txt" class="hidden">
+    </div>
+
+    <div class="divider"><span>or paste text</span></div>
+
+    <textarea id="text-input"
+      placeholder="Paste a CTI report here..."></textarea>
+
+    <div class="actions">
+      <button class="secondary" id="sample-btn">Load Sample</button>
+      <button class="primary" id="analyze-btn">Analyze Report</button>
+    </div>
+
+    <div class="error hidden" id="error-box"></div>
+  </div>
+
+  <!-- Batch test -->
+  <div class="panel" id="batch-panel">
+    <h2>2. Batch Test — All 20 Test PDFs</h2>
+    <p style="color: var(--muted); font-size: 13px; margin: 0 0 12px 0;">
+      Run the analyzer on every PDF in <code>test_pdfs/</code> and see which ones
+      are flagged as emerging threats and their attack types.
+    </p>
+    <button class="primary" id="batch-btn" style="width:100%;">
+      Run Batch Test on 20 PDFs
+    </button>
+    <div id="batch-results" class="hidden" style="margin-top: 20px;"></div>
+  </div>
+
+  <!-- Loading -->
+  <div class="panel hidden" id="loading-panel">
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Analyzing report — this takes 2-5 seconds...</p>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="hidden" id="results-panel">
+    <div class="verdict-card" id="verdict-card"></div>
+    <button class="secondary" id="reset-btn" style="width:100%;margin-top:16px;">
+      Analyze Another Report
+    </button>
+  </div>
+
+  <div class="footer-note">
+    Hybrid TF-IDF + SBERT classifier · BERTopic topic discovery · Rule-based emerging-threat detection
+  </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
